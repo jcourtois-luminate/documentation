@@ -75,9 +75,10 @@ You can optionally add the following deployment attributes:
 
 See the [DORA Metrics API reference documentation][1] for the full spec and more examples with the API SDKs.
 
-For the following example, replace `<DD_SITE>` in the URL with {{< region-param key="dd_site" code="true" >}}:
+Before copying the example, please check that your [Datadog site](https://docs.datadoghq.com/getting_started/site/) is correctly on the right pane of this documentation.
+
 ```shell
-  curl -X POST "https://api.<DD_SITE>/api/v2/dora/deployment" \
+  curl -X POST "https://api.{{< region-param key="dd_site" >}}/api/v2/dora/deployment" \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \
   -H "DD-API-KEY: ${DD_API_KEY}" \
@@ -249,7 +250,7 @@ curl -X POST "https://api.{{< region-param key="dd_site" >}}/api/v2/dora/inciden
     "data": {
       "attributes": {
         "services": ["shopist"],
-        "team": "shopist-devs"
+        "team": "shopist-devs",
         "started_at": 1693491974000000000,
         "finished_at": 1693491984000000000,
         "git": {
